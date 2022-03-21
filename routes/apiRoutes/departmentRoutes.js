@@ -4,7 +4,7 @@ const db = require("../../db/connections");
 
 // GET all departments
 router.get("/departments", (req, res) => {
-  const sql = `SELECT * FROM department`;
+  const sql = `SELECT department.name AS department, department.id FROM department`;
 
   db.query(sql, (err, rows) => {
     if (err) {
